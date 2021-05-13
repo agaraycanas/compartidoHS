@@ -37,5 +37,38 @@ public class CadenaTest {
 		assertEquals("correcaminos", cadena.getCadena());
 	}
 
+
+	@Test
+	@DisplayName("quitar01: a la cadena 'x-x-x' le quito 'y' y queda 'x-x-x'")
+	public void quitar01() {
+		Cadena cadena = new Cadena("x-x-x");
+		cadena.quitar('y');
+		assertEquals("x-x-x", cadena.getCadena());
+	}
+
+	@Test
+	@DisplayName("quitar02: a la cadena 'x-y-x' le quito 'y' y queda 'x--x'")
+	public void quitar02() {
+		Cadena cadena = new Cadena("x-y-x");
+		cadena.quitar('y');
+		assertEquals("x--x", cadena.getCadena());
+	}
+
+	@Test
+	@DisplayName("quitar03: a la cadena 'x-x-x' le quito 'x' y queda '--'")
+	public void quitar03() {
+		Cadena cadena = new Cadena("x-x-x");
+		cadena.quitar('x');
+		assertEquals("--", cadena.getCadena());
+	}
+
+	@Test
+	@DisplayName("quitar04: a la cadena '' le quito 'x' y queda ''")
+	public void quitar04() {
+		Cadena cadena = new Cadena("");
+		cadena.quitar('x');
+		assertEquals("", cadena.getCadena());
+	}
+
 	
 }
